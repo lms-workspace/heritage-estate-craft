@@ -1,0 +1,66 @@
+import { Link } from "react-router-dom";
+import { Phone, Mail, MapPin } from "lucide-react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-charcoal text-charcoal-foreground">
+      <div className="container mx-auto px-4 md:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+          {/* Brand */}
+          <div className="space-y-4">
+            <h3 className="font-heading text-2xl text-parchment">Heritage RV Detailing</h3>
+            <p className="font-body text-sm text-parchment/50 leading-relaxed italic">
+              Quiet luxury. Disciplined craftsmanship. Long-term care.
+            </p>
+          </div>
+
+          {/* Contact */}
+          <div className="space-y-4">
+            <h4 className="font-body text-xs tracking-[0.2em] uppercase text-parchment/40 mb-4">Contact</h4>
+            <a href="tel:6166447135" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
+              <Phone size={14} className="text-bronze" /> 616-644-7135
+            </a>
+            <a href="mailto:Tom@HeritageRVDetailing.com" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
+              <Mail size={14} className="text-bronze" /> Tom@HeritageRVDetailing.com
+            </a>
+            <div className="flex items-center gap-3 text-parchment/70 text-sm">
+              <MapPin size={14} className="text-bronze" /> Middle Tennessee
+            </div>
+          </div>
+
+          {/* Navigation */}
+          <div className="space-y-4">
+            <h4 className="font-body text-xs tracking-[0.2em] uppercase text-parchment/40 mb-4">Navigation</h4>
+            <div className="space-y-3">
+              {["Home", "Services", "Gallery", "About", "Book Now"].map((label) => (
+                <Link
+                  key={label}
+                  to={label === "Home" ? "/" : label === "Book Now" ? "/book" : `/${label.toLowerCase()}`}
+                  className="block text-parchment/60 hover:text-parchment text-sm transition-colors"
+                >
+                  {label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Social & Copyright */}
+        <div className="mt-16 pt-8 border-t border-parchment/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-parchment/30 text-xs font-body">
+            © {new Date().getFullYear()} Heritage RV Detailing. All rights reserved.
+          </p>
+          <div className="flex gap-6">
+            {["Instagram", "Facebook", "Google"].map((s) => (
+              <span key={s} className="text-parchment/30 hover:text-parchment/60 text-xs cursor-pointer transition-colors">
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

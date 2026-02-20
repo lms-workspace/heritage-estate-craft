@@ -1,0 +1,186 @@
+import { useState } from "react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+
+const serviceOptions = [
+  "Signature Exterior Renewal",
+  "Ultimate Fiberglass Restoration",
+  "Luxe Roof Rejuvenation",
+  "Essential Maintenance Wash",
+];
+
+const serviceAreaCities = [
+  "Nashville", "Franklin", "Brentwood", "Murfreesboro",
+  "Hendersonville", "Gallatin", "Lebanon", "Mt. Juliet",
+  "Smyrna", "Spring Hill", "Columbia", "Clarksville",
+];
+
+const BookNow = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    rvType: "",
+    service: "",
+    preferredDate: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Placeholder — would integrate with email service
+    setSubmitted(true);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const inputClass =
+    "w-full bg-background border border-secondary font-body text-sm text-foreground px-4 py-3 rounded-sm focus:outline-none focus:border-primary/50 transition-colors";
+
+  return (
+    <main className="pt-20">
+      {/* Header */}
+      <section className="bg-charcoal text-parchment py-20 md:py-28">
+        <div className="container mx-auto px-4 md:px-8 max-w-3xl text-center">
+          <h1 className="font-heading text-4xl md:text-5xl mb-4">Let's Protect What You've Invested In</h1>
+          <div className="w-12 h-0.5 bg-bronze mx-auto" />
+        </div>
+      </section>
+
+      <section className="bg-background py-16 md:py-24">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 max-w-6xl mx-auto">
+            {/* Form */}
+            <div className="lg:col-span-2">
+              {submitted ? (
+                <div className="text-center py-16">
+                  <h2 className="font-heading text-2xl text-foreground mb-4">Thank You</h2>
+                  <p className="font-body text-muted-foreground">
+                    Tom personally responds to every inquiry within 24 hours.
+                  </p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Name</label>
+                      <input name="name" required value={formData.name} onChange={handleChange} className={inputClass} />
+                    </div>
+                    <div>
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Email</label>
+                      <input name="email" type="email" required value={formData.email} onChange={handleChange} className={inputClass} />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Phone</label>
+                      <input name="phone" type="tel" value={formData.phone} onChange={handleChange} className={inputClass} />
+                    </div>
+                    <div>
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Type & Length</label>
+                      <input name="rvType" value={formData.rvType} onChange={handleChange} className={inputClass} placeholder="e.g., Class A, 38ft" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Service Interested In</label>
+                    <select name="service" value={formData.service} onChange={handleChange} className={inputClass}>
+                      <option value="">Select a service</option>
+                      {serviceOptions.map((s) => (
+                        <option key={s} value={s}>{s}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div>
+                    <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Preferred Date</label>
+                    <input name="preferredDate" type="date" value={formData.preferredDate} onChange={handleChange} className={inputClass} />
+                  </div>
+                  <div>
+                    <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Message</label>
+                    <textarea name="message" rows={4} value={formData.message} onChange={handleChange} className={inputClass} />
+                  </div>
+                  <button
+                    type="submit"
+                    className="bg-primary text-primary-foreground font-body font-medium text-sm px-10 py-4 rounded-sm tracking-wide hover:bg-primary/90 transition-colors"
+                  >
+                    Request a Quote
+                  </button>
+                </form>
+              )}
+
+              {/* Calendly Placeholder */}
+              <div className="mt-16 border border-secondary p-10 text-center">
+                <h3 className="font-heading text-xl text-foreground mb-2">Schedule Your Consultation</h3>
+                <p className="font-body text-sm text-muted-foreground mb-4">
+                  Calendly integration coming soon — owner will connect scheduling link.
+                </p>
+                <div className="h-48 bg-parchment/10 border border-secondary flex items-center justify-center">
+                  <span className="font-body text-xs text-muted-foreground">Calendly Embed Placeholder</span>
+                </div>
+              </div>
+
+              {/* Deposit */}
+              <div className="mt-16 border border-secondary p-10">
+                <h3 className="font-heading text-xl text-foreground mb-4">Securing Your Appointment</h3>
+                <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
+                  A $50 deposit is required to reserve your appointment. This ensures your time is protected and your service is prepared with intention.
+                </p>
+                <div className="h-32 bg-parchment/10 border border-secondary flex items-center justify-center mb-4">
+                  <span className="font-body text-xs text-muted-foreground">Stripe Payment Embed Placeholder</span>
+                </div>
+                <p className="font-body text-xs text-muted-foreground">
+                  Your deposit is applied toward your total service cost.
+                </p>
+              </div>
+            </div>
+
+            {/* Sidebar */}
+            <div className="space-y-8">
+              <div>
+                <h3 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Contact</h3>
+                <div className="space-y-4">
+                  <a href="tel:6166447135" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
+                    <Phone size={14} className="text-bronze" /> 616-644-7135
+                  </a>
+                  <a href="mailto:Tom@HeritageRVDetailing.com" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
+                    <Mail size={14} className="text-bronze" /> Tom@HeritageRVDetailing.com
+                  </a>
+                  <div className="flex items-center gap-3 text-foreground/80 font-body text-sm">
+                    <MapPin size={14} className="text-bronze" /> Middle Tennessee
+                  </div>
+                  <div className="flex items-center gap-3 text-foreground/80 font-body text-sm">
+                    <Clock size={14} className="text-bronze" /> Responds within 24 hours
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Service Area</h3>
+                {/* Map placeholder */}
+                <div className="aspect-video bg-parchment/10 border border-secondary flex items-center justify-center mb-4">
+                  <span className="font-body text-xs text-muted-foreground">Map — Middle Tennessee</span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {serviceAreaCities.map((city) => (
+                    <span key={city} className="font-body text-xs text-muted-foreground bg-parchment/20 px-3 py-1 rounded-sm">
+                      {city}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="border-t border-secondary pt-6">
+                <p className="font-body text-sm text-foreground/70 italic">
+                  Tom personally responds to every inquiry within 24 hours.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default BookNow;
