@@ -183,7 +183,7 @@ const Index = () => {
             <ServiceCard
               title="Luxe Roof Rejuvenation"
               price="From $120"
-              tagline="Protection you don't see — performance you trust."
+              tagline="Protection you can depend on — performance you trust."
               cta="Preserve What Matters"
               ctaLink="/services"
             />
