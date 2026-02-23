@@ -11,7 +11,7 @@ const serviceOptions = [
 const serviceAreaCities = [
   "Nashville", "Franklin", "Brentwood", "Murfreesboro",
   "Hendersonville", "Gallatin", "Lebanon", "Mt. Juliet",
-  "Smyrna", "Spring Hill", "Columbia", "Clarksville",
+  "Smyrna", "Spring Hill",
 ];
 
 const BookNow = () => {
@@ -19,9 +19,11 @@ const BookNow = () => {
     name: "",
     email: "",
     phone: "",
-    rvType: "",
+    zipCode: "",
+    rvMake: "",
+    rvModel: "",
+    rvLength: "",
     service: "",
-    preferredDate: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
@@ -79,9 +81,23 @@ const BookNow = () => {
                       <input name="phone" type="tel" value={formData.phone} onChange={handleChange} className={inputClass} />
                     </div>
                     <div>
-                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Type & Length</label>
-                      <input name="rvType" value={formData.rvType} onChange={handleChange} className={inputClass} placeholder="e.g., Class A, 38ft" />
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Zip Code</label>
+                      <input name="zipCode" value={formData.zipCode} onChange={handleChange} className={inputClass} placeholder="e.g., 37201" />
                     </div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Make</label>
+                      <input name="rvMake" value={formData.rvMake} onChange={handleChange} className={inputClass} placeholder="e.g., Airstream, Tiffin" />
+                    </div>
+                    <div>
+                      <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Model</label>
+                      <input name="rvModel" value={formData.rvModel} onChange={handleChange} className={inputClass} placeholder="e.g., Allegro, Ventana" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Length</label>
+                    <input name="rvLength" value={formData.rvLength} onChange={handleChange} className={inputClass} placeholder="e.g., 38 ft" />
                   </div>
                   <div>
                     <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Service Interested In</label>
@@ -91,10 +107,6 @@ const BookNow = () => {
                         <option key={s} value={s}>{s}</option>
                       ))}
                     </select>
-                  </div>
-                  <div>
-                    <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Preferred Date</label>
-                    <input name="preferredDate" type="date" value={formData.preferredDate} onChange={handleChange} className={inputClass} />
                   </div>
                   <div>
                     <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Message</label>

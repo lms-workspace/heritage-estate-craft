@@ -12,7 +12,7 @@ const trustStats = [
   "Mobile RV Detailing — We Come to You",
   "Material-Specific Process for Every Surface",
   "Middle Tennessee's Luxury RV Specialist",
-  "Serving Nashville · Knoxville · Chattanooga",
+  "Serving Nashville & Surrounding Areas",
 ];
 
 const processSteps = [

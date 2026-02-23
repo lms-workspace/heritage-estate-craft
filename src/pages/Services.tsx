@@ -42,7 +42,7 @@ const services = [
   {
     title: "Luxe Roof Rejuvenation",
     price: "From $120",
-    tagline: "Protection you don't see — performance you trust.",
+    tagline: "Protection you can depend on — performance you trust.",
     cta: "Preserve What Matters",
     description:
       "The roof is the most UV-exposed surface on your RV and the most frequently overlooked. Our Luxe Roof Rejuvenation thoroughly cleans and conditions the entire roof system — rubber or fiberglass — and applies aerospace-grade UV treatment to every component.",
