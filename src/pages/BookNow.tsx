@@ -27,11 +27,33 @@ const BookNow = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder — would integrate with email service
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        const data = await res.json();
+        throw new Error(data.error || "Something went wrong. Please try again.");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Something went wrong. Please try again.";
+      setError(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -60,7 +82,7 @@ const BookNow = () => {
                 <div className="text-center py-16">
                   <h2 className="font-heading text-2xl text-foreground mb-4">Thank You</h2>
                   <p className="font-body text-muted-foreground">
-                    Tom personally responds to every inquiry within 24 hours.
+                    Tom personally responds to every inquiry within 24 hours. Check your inbox — a confirmation has been sent to {formData.email}.
                   </p>
                 </div>
               ) : (
@@ -112,11 +134,15 @@ const BookNow = () => {
                     <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Message</label>
                     <textarea name="message" rows={4} value={formData.message} onChange={handleChange} className={inputClass} />
                   </div>
+                  {error && (
+                    <p className="font-body text-sm text-red-500">{error}</p>
+                  )}
                   <button
                     type="submit"
-                    className="bg-primary text-primary-foreground font-body font-medium text-sm px-10 py-4 rounded-sm tracking-wide hover:bg-primary/90 transition-colors"
+                    disabled={loading}
+                    className="bg-primary text-primary-foreground font-body font-medium text-sm px-10 py-4 rounded-sm tracking-wide hover:bg-primary/90 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
-                    Request a Quote
+                    {loading ? "Sending..." : "Request a Quote"}
                   </button>
                 </form>
               )}
