@@ -20,8 +20,8 @@ const Footer = () => {
             <a href="tel:6166447135" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
               <Phone size={14} className="text-bronze" /> 616-644-7135
             </a>
-            <a href="mailto:Tom@HeritageRVDetailing.com" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
-              <Mail size={14} className="text-bronze" /> Tom@HeritageRVDetailing.com
+            <a href="mailto:tomgascon@heritagervdetailing.com" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
+              <Mail size={14} className="text-bronze" /> tomgascon@heritagervdetailing.com
             </a>
             <div className="flex items-center gap-3 text-parchment/70 text-sm">
               <MapPin size={14} className="text-bronze" /> Middle Tennessee
@@ -32,10 +32,15 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="font-body text-xs tracking-[0.2em] uppercase text-parchment/40 mb-4">Navigation</h4>
             <div className="space-y-3">
-              {["Home", "Services", "Gallery", "About", "Book Now"].map((label) => (
+              {[
+                { label: "Home", to: "/" },
+                { label: "Services", to: "/services" },
+                { label: "About", to: "/about" },
+                { label: "Book Now", to: "/book" },
+              ].map(({ label, to }) => (
                 <Link
                   key={label}
-                  to={label === "Home" ? "/" : label === "Book Now" ? "/book" : `/${label.toLowerCase()}`}
+                  to={to}
                   className="block text-parchment/60 hover:text-parchment text-sm transition-colors"
                 >
                   {label}
