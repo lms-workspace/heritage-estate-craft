@@ -3,6 +3,7 @@ import { Check } from "lucide-react";
 
 const services = [
   {
+    id: "signature-exterior-renewal",
     title: "Signature Exterior Renewal",
     price: "From $18 per linear foot",
     tagline: "Immaculate. Protected. Refined.",
@@ -22,6 +23,7 @@ const services = [
     interval: "Every 6–9 months",
   },
   {
+    id: "ultimate-fiberglass-restoration",
     title: "Ultimate Fiberglass Restoration",
     price: "From $22 per linear foot",
     tagline: "Bring the original beauty back.",
@@ -40,6 +42,7 @@ const services = [
     interval: null,
   },
   {
+    id: "luxe-roof-rejuvenation",
     title: "Luxe Roof Rejuvenation",
     price: "From $120",
     tagline: "Protection you can depend on — performance you trust.",
@@ -56,6 +59,7 @@ const services = [
     note: "Add-on — requires minimum Essential Maintenance Wash",
   },
   {
+    id: "essential-maintenance-wash",
     title: "Essential Maintenance Wash",
     price: "From $7 per linear foot",
     tagline: "Because excellence deserves consistency.",
@@ -100,6 +104,7 @@ const Services = () => {
         {services.map((service, i) => (
           <div
             key={service.title}
+            id={service.id}
             className={`py-16 md:py-24 ${i % 2 === 1 ? "bg-parchment/10" : ""}`}
           >
             <div className="container mx-auto px-4 md:px-8 max-w-4xl">
