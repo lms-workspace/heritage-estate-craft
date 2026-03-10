@@ -150,31 +150,6 @@ const BookNow = () => {
                   </button>
                 </form>
               )}
-
-              {/* Calendly Placeholder */}
-              <div className="mt-16 border border-secondary p-10 text-center">
-                <h3 className="font-heading text-xl text-foreground mb-2">Schedule Your Consultation</h3>
-                <p className="font-body text-sm text-muted-foreground mb-4">
-                  Calendly integration coming soon — owner will connect scheduling link.
-                </p>
-                <div className="h-48 bg-parchment/10 border border-secondary flex items-center justify-center">
-                  <span className="font-body text-xs text-muted-foreground">Calendly Embed Placeholder</span>
-                </div>
-              </div>
-
-              {/* Deposit */}
-              <div className="mt-16 border border-secondary p-10">
-                <h3 className="font-heading text-xl text-foreground mb-4">Securing Your Appointment</h3>
-                <p className="font-body text-sm text-foreground/80 leading-relaxed mb-6">
-                  A $50 deposit is required to reserve your appointment. This ensures your time is protected and your service is prepared with intention.
-                </p>
-                <div className="h-32 bg-parchment/10 border border-secondary flex items-center justify-center mb-4">
-                  <span className="font-body text-xs text-muted-foreground">Stripe Payment Embed Placeholder</span>
-                </div>
-                <p className="font-body text-xs text-muted-foreground">
-                  Your deposit is applied toward your total service cost.
-                </p>
-              </div>
             </div>
 
             {/* Sidebar */}
@@ -185,8 +160,8 @@ const BookNow = () => {
                   <a href="tel:6166447135" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
                     <Phone size={14} className="text-bronze" /> 616-644-7135
                   </a>
-                  <a href="mailto:Tom@HeritageRVDetailing.com" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
-                    <Mail size={14} className="text-bronze" /> Tom@HeritageRVDetailing.com
+                  <a href="mailto:tomgascon@heritagervdetailing.com" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
+                    <Mail size={14} className="text-bronze" /> tomgascon@heritagervdetailing.com
                   </a>
                   <div className="flex items-center gap-3 text-foreground/80 font-body text-sm">
                     <MapPin size={14} className="text-bronze" /> Middle Tennessee
@@ -199,9 +174,17 @@ const BookNow = () => {
 
               <div>
                 <h3 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Service Area</h3>
-                {/* Map placeholder */}
-                <div className="aspect-video bg-parchment/10 border border-secondary flex items-center justify-center mb-4">
-                  <span className="font-body text-xs text-muted-foreground">Map — Middle Tennessee</span>
+                <div className="mb-4 rounded-sm overflow-hidden border border-secondary">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d782000!2d-86.7816!3d36.1627!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1"
+                    width="100%"
+                    height="220"
+                    style={{ border: 0, display: "block" }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Heritage RV Detailing Service Area — Middle Tennessee"
+                  />
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {serviceAreaCities.map((city) => (
