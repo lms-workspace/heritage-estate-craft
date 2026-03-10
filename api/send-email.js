@@ -54,7 +54,7 @@ export default async function handler(req, res) {
             <p style="color: #1C1C1C; margin: 0;">${rvMake || ''} ${rvModel || ''} ${rvLength ? `· ${rvLength}` : ''}</p>
             <p style="color: #2A4520; font-weight: bold; margin: 4px 0 0;">${service || 'General Inquiry'}</p>
           </div>
-          <p style="color: #5C4033; font-size: 13px;">Questions in the meantime? Call or text: <a href="tel:6166447135" style="color: #2A4520;">616-644-7135</a></p>
+          <p style="color: #5C4033; font-size: 13px;">Questions in the meantime? Email <a href="mailto:tomgascon@heritagervdetailing.com" style="color: #2A4520;">tomgascon@heritagervdetailing.com</a> or call/text <a href="tel:6166447135" style="color: #2A4520;">616-644-7135</a></p>
           <p style="margin-top: 32px; color: #1C1C1C; font-style: italic;">— Heritage RV Detailing<br><span style="color: #5C4033; font-size: 12px;">Tennessee's Mobile RV Care Specialist</span></p>
         </div>
       `,
