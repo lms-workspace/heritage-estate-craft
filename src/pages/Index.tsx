@@ -171,28 +171,28 @@ const Index = () => {
               price="From $18/linear ft"
               tagline="Immaculate. Protected. Refined."
               cta="Restore Your RV"
-              ctaLink="/services"
+              ctaLink="/services#signature-exterior-renewal"
             />
             <ServiceCard
               title="Ultimate Fiberglass Restoration"
               price="From $22/linear ft"
               tagline="Bring the original beauty back."
               cta="Revive the Surface"
-              ctaLink="/services"
+              ctaLink="/services#ultimate-fiberglass-restoration"
             />
             <ServiceCard
               title="Luxe Roof Rejuvenation"
               price="From $120"
               tagline="Protection you can depend on — performance you trust."
               cta="Preserve What Matters"
-              ctaLink="/services"
+              ctaLink="/services#luxe-roof-rejuvenation"
             />
             <ServiceCard
               title="Essential Maintenance Wash"
               price="From $7/linear ft"
               tagline="Because excellence deserves consistency."
               cta="Maintain the Standard"
-              ctaLink="/services"
+              ctaLink="/services#essential-maintenance-wash"
             />
           </div>
         </div>
@@ -211,34 +211,6 @@ const Index = () => {
                 <p className="font-body text-sm text-parchment/60 leading-relaxed">{step.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* GALLERY PREVIEW */}
-      <section className="bg-charcoal/95 py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-parchment text-center mb-4">
-            Results speak louder than promises.
-          </h2>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-14" />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {galleryLabels.map((label) => (
-              <div
-                key={label}
-                className="aspect-[4/3] bg-charcoal border border-parchment/10 flex items-end p-4"
-              >
-                <span className="font-body text-xs text-bronze tracking-wide uppercase">{label}</span>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              to="/gallery"
-              className="inline-block border border-parchment/30 text-parchment font-body font-medium text-sm px-8 py-3 rounded-sm tracking-wide hover:bg-parchment/10 transition-colors"
-            >
-              View Full Gallery
-            </Link>
           </div>
         </div>
       </section>
