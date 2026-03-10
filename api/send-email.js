@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   try {
     // Notify Tom of new inquiry
     await resend.emails.send({
-      from: 'Heritage RV Website <tomgascon@heritagervdetailing.com>',
+      from: 'Heritage RV Detailing <noreply@heritagervdetailing.com>',
       to: 'tomgascon@heritagervdetailing.com',
       subject: `New Inquiry — ${service || 'General'} — ${name}`,
       html: `
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
     // Auto-reply to the customer
     await resend.emails.send({
-      from: 'Heritage RV Detailing <tomgascon@heritagervdetailing.com>',
+      from: 'Heritage RV Detailing <noreply@heritagervdetailing.com>',
       to: email,
       subject: `We received your request — Heritage RV Detailing`,
       html: `
