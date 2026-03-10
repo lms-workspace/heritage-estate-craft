@@ -14,10 +14,10 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Notify Tom/Erica of new inquiry
+    // Notify Tom of new inquiry
     await resend.emails.send({
-      from: 'Heritage RV Website <noreply@heritagervdetailing.com>',
-      to: 'Tom@HeritageRVDetailing.com',
+      from: 'Heritage RV Website <tomgascon@heritagervdetailing.com>',
+      to: 'tomgascon@heritagervdetailing.com',
       subject: `New Inquiry — ${service || 'General'} — ${name}`,
       html: `
         <div style="font-family: Georgia, serif; max-width: 600px; margin: 0 auto; padding: 32px; background: #1C1C1C; color: #F5EDD8;">
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
 
     // Auto-reply to the customer
     await resend.emails.send({
-      from: 'Heritage RV Detailing <noreply@heritagervdetailing.com>',
+      from: 'Heritage RV Detailing <tomgascon@heritagervdetailing.com>',
       to: email,
       subject: `We received your request — Heritage RV Detailing`,
       html: `
@@ -63,6 +63,6 @@ export default async function handler(req, res) {
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error('Resend error:', err);
-    return res.status(500).json({ error: 'Failed to send email. Please try again.' });
+    return res.status(500).json({ error: err.message || 'Failed to send email. Please try again.' });
   }
 }
