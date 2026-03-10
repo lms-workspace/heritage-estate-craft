@@ -58,9 +58,13 @@ const About = () => {
             </div>
           </div>
 
-          {/* Photo placeholder */}
-          <div className="mt-12 aspect-[16/9] bg-parchment/20 border border-secondary flex items-center justify-center">
-            <span className="font-body text-sm text-muted-foreground">Tom & Erica — Heritage RV Detailing</span>
+          {/* Team Photo */}
+          <div className="mt-12">
+            <img
+              src="/erica-tom-family.jpg"
+              alt="Erica and family — Heritage RV Detailing"
+              className="w-full rounded-sm border border-secondary object-cover"
+            />
           </div>
         </div>
       </section>
