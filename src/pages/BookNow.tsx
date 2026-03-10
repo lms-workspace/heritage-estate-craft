@@ -43,8 +43,12 @@ const BookNow = () => {
       });
 
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error || "Something went wrong. Please try again.");
+        let errorMsg = "Something went wrong. Please try again.";
+        try {
+          const data = await res.json();
+          errorMsg = data.error || errorMsg;
+        } catch {}
+        throw new Error(errorMsg);
       }
 
       setSubmitted(true);
