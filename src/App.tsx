@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import Services from "./pages/Services";
-import Gallery from "./pages/Gallery";
 import About from "./pages/About";
 import BookNow from "./pages/BookNow";
 import NotFound from "./pages/NotFound";
@@ -24,7 +23,6 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/services" element={<Services />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/book" element={<BookNow />} />
           <Route path="*" element={<NotFound />} />
