@@ -41,6 +41,7 @@ const Footer = () => {
                 <Link
                   key={label}
                   to={to}
+                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
                   className="block text-parchment/60 hover:text-parchment text-sm transition-colors"
                 >
                   {label}
