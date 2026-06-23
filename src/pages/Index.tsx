@@ -21,7 +21,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <picture>
             <source srcSet={heritageImages.heroBackground} type="image/webp" />
-            <img src={heritageImages.heroBackgroundJpg} alt="Mt. McKinley travel trailer exterior after RV detailing" className="h-full w-full object-cover" />
+            <img src={heritageImages.heroBackgroundJpg} alt="Luxury fifth-wheel RV parked in a resort-style setting" className="h-full w-full object-cover" />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-[#161210] via-[#161210]/78 to-[#161210]/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#161210] via-transparent to-transparent" />

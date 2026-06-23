@@ -54,9 +54,14 @@ const Footer = () => {
 
         {/* Social & Copyright */}
         <div className="mt-16 pt-8 border-t border-parchment/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-parchment/30 text-xs font-body">
-            © {new Date().getFullYear()} Heritage RV Detailing. All rights reserved.
-          </p>
+          <div className="space-y-2 text-center md:text-left">
+            <p className="text-parchment/30 text-xs font-body">
+              © {new Date().getFullYear()} Heritage RV Detailing. All rights reserved.
+            </p>
+            <p className="text-[10px] text-parchment/24">
+              Hero RV photo adapted from <a href="https://commons.wikimedia.org/wiki/File:Starcraft_RV_-_GSL_Fifth_Wheel.jpg" className="underline decoration-parchment/20 underline-offset-2 hover:text-parchment/45">Anshamblen15</a> / <a href="https://creativecommons.org/licenses/by-sa/4.0" className="underline decoration-parchment/20 underline-offset-2 hover:text-parchment/45">CC BY-SA 4.0</a>
+            </p>
+          </div>
           <div className="flex gap-6">
             {["Instagram", "Facebook", "Google"].map((s) => (
               <span key={s} className="text-parchment/30 hover:text-parchment/60 text-xs cursor-pointer transition-colors">

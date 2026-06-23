@@ -1,8 +1,8 @@
 export const heritageImages = {
   hero: "/heritage-media/images/salem-hemisphere-front-profile.webp",
   heroJpg: "/heritage-media/images/salem-hemisphere-front-profile.jpg",
-  heroBackground: "/heritage-media/images/mckinley-trailer-side-profile.webp",
-  heroBackgroundJpg: "/heritage-media/images/mckinley-trailer-side-profile.jpg",
+  heroBackground: "/heritage-media/images/luxury-fifth-wheel-hero.webp",
+  heroBackgroundJpg: "/heritage-media/images/luxury-fifth-wheel-hero.jpg",
   frontCap: "/heritage-media/images/salem-hemisphere-front-cap.webp",
   sideProfile: "/heritage-media/images/mckinley-trailer-side-profile.webp",
   serviceInProgress: "/heritage-media/images/rv-exterior-service-in-progress.webp",
