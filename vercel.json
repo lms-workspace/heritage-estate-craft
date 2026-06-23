@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/privacy", "destination": "/index.html" },
+    { "source": "/privacy/", "destination": "/index.html" },
+    { "source": "/((?!assets/|favicon.ico|robots.txt|sitemap.xml).*)", "destination": "/index.html" }
+  ]
+}

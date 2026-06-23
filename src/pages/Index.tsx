@@ -1,272 +1,165 @@
 import { Link } from "react-router-dom";
-import ServiceCard from "@/components/ServiceCard";
-import heroImage from "@/assets/hero-rv.jpg";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-const trustStats = [
-  "Mobile RV Detailing — We Come to You",
-  "Material-Specific Process for Every Surface",
-  "Middle Tennessee's Luxury RV Specialist",
-  "Serving Nashville & Surrounding Areas",
-];
+import { ArrowRight, CheckCircle2, MapPin, Play, Shield, Sparkles, Sun, Truck } from "lucide-react";
+import { galleryItems, heritageImages, heritageVideos, servicePackages } from "@/lib/heritageMedia";
 
 const processSteps = [
-  {
-    num: "01",
-    title: "Consultation & Assessment",
-    desc: "We evaluate materials, condition, and usage to determine the appropriate level of care.",
-  },
-  {
-    num: "02",
-    title: "Tailored, Material-Specific Service",
-    desc: "Every service is customized to the vehicle — no shortcuts, no generic processes.",
-  },
-  {
-    num: "03",
-    title: "Long-Term Protection",
-    desc: "We finish with premium protective treatments that extend surface life and maintain value.",
-  },
+  "Inspect exterior materials, oxidation, trim, roof, wheels, and high-impact road grime areas.",
+  "Clean with RV-safe methods around decals, windows, seals, vents, awnings, and hardware.",
+  "Polish, wax, or protect the finish based on what the RV actually needs — not a one-size-fits-all wash.",
 ];
 
-const galleryLabels = [
-  "Oxidation Treatment",
-  "Fiberglass Restoration",
-  "Roof Rejuvenation",
-  "Exterior Renewal",
-];
-
-const testimonials = [
-  {
-    quote: "Heritage transformed our coach. The attention to detail and professionalism exceeded every expectation.",
-    name: "R. Mitchell",
-    location: "Nashville, TN",
-  },
-  {
-    quote: "Finally, a detailing service that treats our RV like the investment it is. Impeccable results every time.",
-    name: "D. Warren",
-    location: "Franklin, TN",
-  },
-  {
-    quote: "Tom's craftsmanship is unmatched. Our Class A has never looked better — even compared to the day we bought it.",
-    name: "S. Collins",
-    location: "Murfreesboro, TN",
-  },
-];
-
-const faqs = [
-  {
-    q: "Are you a mobile detailing company?",
-    a: "Yes. Heritage RV Detailing is fully mobile. We deliver service on-site at homes, storage facilities, and private properties by appointment.",
-  },
-  {
-    q: "How is pricing calculated?",
-    a: "Most services are priced by linear foot to account for vehicle size, surface area, and time required. We provide clear pricing before any service begins.",
-  },
-  {
-    q: "How long does an appointment take?",
-    a: "Service time depends on vehicle size and condition. We schedule enough time to maintain quality — nothing rushed, nothing overlooked.",
-  },
-  {
-    q: "Can you remove oxidation from fiberglass RVs?",
-    a: "Yes. Our Ultimate Fiberglass Restoration is specifically designed for oxidized or dull fiberglass to restore clarity, color, and surface integrity.",
-  },
-  {
-    q: "What should I do to prepare?",
-    a: "We'll confirm access and the work area during scheduling. If your RV is in storage, we can coordinate entry with the facility.",
-  },
-  {
-    q: "What areas do you serve?",
-    a: "We serve Middle Tennessee and surrounding areas by appointment. Outside our core range? Request a consultation and we'll confirm availability.",
-  },
+const proofPoints = [
+  { icon: Truck, title: "Mobile RV care", body: "Built for fifth-wheels, travel trailers, and motorhomes across Middle Tennessee." },
+  { icon: Sun, title: "UV-minded protection", body: "Exterior work focused on road film, oxidation, sun exposure, and finish preservation." },
+  { icon: Shield, title: "Material-specific detail", body: "Fiberglass, metal, trim, plastic, decals, windows, wheels, and roof components are treated intentionally." },
 ];
 
 const Index = () => {
   return (
-    <main>
-      {/* HERO */}
-      <section className="relative min-h-[90vh] flex items-center bg-charcoal overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center opacity-30"
-          style={{ backgroundImage: `url(${heroImage})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-transparent" />
-        <div className="relative container mx-auto px-4 md:px-8 py-32">
+    <main className="min-h-screen bg-[#161210] text-[#f8ecd9]">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <picture>
+            <source srcSet={heritageImages.heroBackground} type="image/webp" />
+            <img src={heritageImages.heroBackgroundJpg} alt="Mt. McKinley travel trailer exterior after RV detailing" className="h-full w-full object-cover" />
+          </picture>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#161210] via-[#161210]/78 to-[#161210]/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#161210] via-transparent to-transparent" />
+        </div>
+
+        <div className="container relative mx-auto grid min-h-[88vh] items-center gap-12 px-6 py-28 lg:grid-cols-[1.05fr_.75fr]">
           <div className="max-w-3xl">
-            <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-parchment leading-tight mb-4">
-              Where Your Investment Is Treated Like a Legacy
+            <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#c27c3e]/40 bg-[#f8ecd9]/10 px-4 py-2 text-sm uppercase tracking-[0.28em] text-[#d9b177]">
+              <Sparkles className="h-4 w-4" /> Premium mobile RV detailing
+            </div>
+            <h1 className="font-serif text-5xl leading-[0.96] tracking-tight md:text-7xl lg:text-8xl">
+              Protect your RV before the road does damage.
             </h1>
-            <div className="w-16 h-0.5 bg-bronze mb-6" />
-            <p className="font-body text-parchment/70 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl">
-              Luxury mobile RV and motor coach detailing focused on preservation, craftsmanship, and long-term value.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#f8ecd9]/78 md:text-xl">
+              Heritage RV Detailing brings exterior cleaning, oxidation care, polishing, wax/sealant protection, roof attention, and wheel-to-front-cap detailing to RV owners across Middle Tennessee.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to="/book"
-                className="bg-primary text-primary-foreground font-body font-medium text-sm px-8 py-4 rounded-sm tracking-wide hover:bg-primary/90 transition-colors text-center"
-              >
-                Protect Your Investment
+            <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+              <Link to="/book-now" className="inline-flex items-center justify-center gap-2 rounded-none bg-[#233917] px-7 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#f8ecd9] ring-1 ring-[#c27c3e]/60 transition hover:bg-[#2f4a21]">
+                Request a quote <ArrowRight className="h-4 w-4" />
               </Link>
-              <Link
-                to="/services"
-                className="border border-parchment/40 text-parchment font-body font-medium text-sm px-8 py-4 rounded-sm tracking-wide hover:bg-parchment/10 transition-colors text-center"
-              >
-                View Our Services
+              <Link to="/gallery" className="inline-flex items-center justify-center gap-2 rounded-none border border-[#f8ecd9]/25 px-7 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#f8ecd9] transition hover:border-[#c27c3e] hover:text-[#d9b177]">
+                View real work
               </Link>
+            </div>
+          </div>
+
+          <div className="relative mx-auto w-full max-w-sm lg:max-w-md">
+            <div className="absolute -inset-5 rounded-[2rem] bg-[#c27c3e]/20 blur-3xl" />
+            <video className="relative aspect-[9/16] w-full rounded-[2rem] border border-[#c27c3e]/50 bg-black object-cover shadow-2xl shadow-black/50" src={heritageVideos.frontCapShort} poster={heritageVideos.frontCapPoster} muted autoPlay loop playsInline />
+            <div className="absolute -bottom-6 left-6 right-6 border border-[#c27c3e]/40 bg-[#161210]/88 p-5 backdrop-blur">
+              <p className="text-xs uppercase tracking-[0.28em] text-[#d9b177]">Featured short</p>
+              <p className="mt-2 text-sm text-[#f8ecd9]/78">A real fifth-wheel clip rebuilt as a polished vertical promo.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* TRUST BAR */}
-      <section className="bg-parchment/30 border-y border-secondary">
-        <div className="container mx-auto px-4 md:px-8 py-6">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-center">
-            {trustStats.map((stat) => (
-              <p key={stat} className="font-body text-sm text-foreground/70 tracking-wide">
-                {stat}
-              </p>
+      <section className="border-y border-[#c27c3e]/20 bg-[#211a16] py-8">
+        <div className="container mx-auto grid gap-6 px-6 md:grid-cols-3">
+          {proofPoints.map(({ icon: Icon, title, body }) => (
+            <div key={title} className="flex gap-4">
+              <Icon className="mt-1 h-6 w-6 shrink-0 text-[#d9b177]" />
+              <div>
+                <h2 className="font-serif text-2xl text-[#fff5e6]">{title}</h2>
+                <p className="mt-2 text-sm leading-6 text-[#f8ecd9]/68">{body}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="container mx-auto grid gap-12 px-6 py-24 lg:grid-cols-[.86fr_.74fr] lg:items-center">
+        <div>
+          <p className="text-sm uppercase tracking-[0.32em] text-[#d9b177]">Recent detail story</p>
+          <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">A full-frame walkthrough with captions that sell the work.</h2>
+          <p className="mt-6 text-lg leading-8 text-[#f8ecd9]/72">
+            The walkthrough keeps the real voice and footage, then adds larger caption moments, service cues, and a clean Heritage overlay treatment so the result feels polished without hiding the actual work.
+          </p>
+          <div className="mt-8 space-y-4">
+            {["Full-bleed video treatment — no inset frame inside the player", "Engaging caption cards timed to the technician walkthrough", "Wax, UV protection, metal, plastics, wheels, and final detail cues called out"].map((item) => (
+              <div key={item} className="flex items-start gap-3 text-[#f8ecd9]/82">
+                <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#d9b177]" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="relative mx-auto w-full max-w-md overflow-hidden border border-[#c27c3e]/35 bg-black shadow-2xl shadow-black/40">
+          <video className="block aspect-[9/16] h-full w-full object-cover" src={heritageVideos.walkthrough} poster={heritageVideos.walkthroughPoster} controls playsInline preload="metadata" />
+        </div>
+      </section>
+
+      <section className="bg-[#f4ead8] py-24 text-[#191410]">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+            <div className="max-w-3xl">
+              <p className="text-sm uppercase tracking-[0.32em] text-[#8d542a]">Services</p>
+              <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">Exterior packages for RVs that live outside.</h2>
+            </div>
+            <Link to="/services" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-[#233917] hover:text-[#8d542a]">
+              Compare services <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {servicePackages.map((service) => (
+              <article key={service.title} className="border border-[#8d542a]/22 bg-white/60 p-6 shadow-sm">
+                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8d542a]">{service.price}</p>
+                <h3 className="mt-4 font-serif text-3xl leading-tight">{service.title}</h3>
+                <p className="mt-3 text-sm font-semibold text-[#233917]">{service.tagline}</p>
+                <p className="mt-4 text-sm leading-6 text-[#191410]/68">{service.description}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8 max-w-4xl text-center">
-          <p className="font-body text-base md:text-lg leading-relaxed text-foreground/80">
-            Heritage RV Detailing provides luxury mobile RV detailing services designed to preserve, protect, and refine high-value recreational vehicles and motor coaches. Every service is delivered with meticulous attention to materials, disciplined craftsmanship, and a long-term view toward asset protection. This is estate-level care — never rushed, never compromised.
-          </p>
+      <section className="container mx-auto px-6 py-24">
+        <div className="grid gap-6 md:grid-cols-3">
+          {galleryItems.slice(0, 3).map((item, index) => (
+            <Link to="/gallery" key={item.title} className={`group overflow-hidden border border-[#c27c3e]/25 bg-[#211a16] ${index === 0 ? "md:col-span-2" : ""}`}>
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={item.src} alt={item.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" />
+              </div>
+              <div className="p-6">
+                <p className="text-xs uppercase tracking-[0.24em] text-[#d9b177]">{item.label}</p>
+                <h3 className="mt-2 font-serif text-3xl">{item.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#f8ecd9]/64">{item.description}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 
-      {/* PROBLEM SECTION */}
-      <section className="bg-primary text-primary-foreground py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8 max-w-3xl text-center">
-          <h2 className="font-heading text-3xl md:text-4xl mb-6">The Cost of Inattention</h2>
-          <p className="font-body text-primary-foreground/80 text-base md:text-lg leading-relaxed mb-10">
-            High-value RVs are continuously exposed to UV radiation, environmental contaminants, and road film. Over time, this exposure accelerates oxidation, dulls finishes, and leads to premature wear that diminishes both appearance and resale value.
-          </p>
-          <Link
-            to="/book"
-            className="inline-block bg-charcoal text-parchment font-body font-medium text-sm px-8 py-4 rounded-sm tracking-wide hover:bg-charcoal/90 transition-colors"
-          >
-            Protect Your Investment
-          </Link>
-        </div>
-      </section>
-
-      {/* SERVICES PREVIEW */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-center mb-4">Our Services</h2>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-14" />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ServiceCard
-              title="Signature Exterior Renewal"
-              price="From $18/linear ft"
-              tagline="Immaculate. Protected. Refined."
-              cta="Restore Your RV"
-              ctaLink="/services#signature-exterior-renewal"
-            />
-            <ServiceCard
-              title="Ultimate Fiberglass Restoration"
-              price="From $22/linear ft"
-              tagline="Bring the original beauty back."
-              cta="Revive the Surface"
-              ctaLink="/services#ultimate-fiberglass-restoration"
-            />
-            <ServiceCard
-              title="Luxe Roof Rejuvenation"
-              price="From $120"
-              tagline="Protection you can depend on — performance you trust."
-              cta="Preserve What Matters"
-              ctaLink="/services#luxe-roof-rejuvenation"
-            />
-            <ServiceCard
-              title="Essential Maintenance Wash"
-              price="From $7/linear ft"
-              tagline="Because excellence deserves consistency."
-              cta="Maintain the Standard"
-              ctaLink="/services#essential-maintenance-wash"
-            />
+      <section className="bg-[#211a16] py-24">
+        <div className="container mx-auto grid gap-12 px-6 lg:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.32em] text-[#d9b177]">Process</p>
+            <h2 className="mt-4 font-serif text-4xl md:text-6xl">Not just a wash. A finish-preservation process.</h2>
+            <p className="mt-6 flex items-center gap-2 text-[#f8ecd9]/66"><MapPin className="h-5 w-5 text-[#d9b177]" /> Middle Tennessee service area</p>
           </div>
-        </div>
-      </section>
-
-      {/* OUR PROCESS */}
-      <section className="bg-charcoal text-charcoal-foreground py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-parchment text-center mb-4">Our Process</h2>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-14" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-            {processSteps.map((step) => (
-              <div key={step.num} className="text-center">
-                <span className="font-heading text-5xl text-bronze/30 block mb-4">{step.num}</span>
-                <h3 className="font-heading text-xl text-parchment mb-3">{step.title}</h3>
-                <p className="font-body text-sm text-parchment/60 leading-relaxed">{step.desc}</p>
+          <div className="grid gap-5 md:grid-cols-3">
+            {processSteps.map((step, index) => (
+              <div key={step} className="border border-[#c27c3e]/25 bg-[#161210] p-6">
+                <span className="font-serif text-5xl text-[#d9b177]">0{index + 1}</span>
+                <p className="mt-6 leading-7 text-[#f8ecd9]/72">{step}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="bg-parchment/20 py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8">
-          <h2 className="font-heading text-3xl md:text-4xl text-center mb-4">What Our Clients Say</h2>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-14" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {testimonials.map((t) => (
-              <div key={t.name} className="bg-background p-8 border border-secondary">
-                <p className="font-body text-sm text-foreground/80 leading-relaxed italic mb-6">
-                  "{t.quote}"
-                </p>
-                <div>
-                  <p className="font-body font-medium text-sm text-foreground">{t.name}</p>
-                  <p className="font-body text-xs text-muted-foreground">{t.location}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="bg-background py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8 max-w-3xl">
-          <h2 className="font-heading text-3xl md:text-4xl text-center mb-4">Frequently Asked Questions</h2>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-14" />
-          <Accordion type="single" collapsible className="space-y-2">
-            {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="border border-secondary px-6">
-                <AccordionTrigger className="font-body text-sm font-medium text-foreground py-5 hover:no-underline">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="font-body text-sm text-muted-foreground leading-relaxed pb-5">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* FINAL CTA */}
-      <section className="bg-primary text-primary-foreground py-20 md:py-24">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl mb-8">Ready to Protect Your Investment?</h2>
-          <Link
-            to="/book"
-            className="inline-block bg-charcoal text-parchment font-body font-medium text-sm px-10 py-4 rounded-sm tracking-wide hover:bg-charcoal/90 transition-colors"
-          >
-            Schedule Care
-          </Link>
-        </div>
+      <section className="container mx-auto px-6 py-24 text-center">
+        <Play className="mx-auto mb-6 h-10 w-10 text-[#d9b177]" />
+        <h2 className="mx-auto max-w-3xl font-serif text-4xl md:text-6xl">Ready to get your RV looking sharp again?</h2>
+        <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-[#f8ecd9]/68">Send Heritage a few details about your RV, its length, current exterior condition, and where it is parked. We’ll help match the right service level.</p>
+        <Link to="/book-now" className="mt-9 inline-flex items-center justify-center gap-2 bg-[#233917] px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#f8ecd9] ring-1 ring-[#c27c3e]/60 hover:bg-[#2f4a21]">
+          Start your quote <ArrowRight className="h-4 w-4" />
+        </Link>
       </section>
     </main>
   );

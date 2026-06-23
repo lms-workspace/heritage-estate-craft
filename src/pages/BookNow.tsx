@@ -47,7 +47,9 @@ const BookNow = () => {
         try {
           const data = await res.json();
           errorMsg = data.error || errorMsg;
-        } catch {}
+        } catch {
+          // Keep the default message when the API does not return JSON.
+        }
         throw new Error(errorMsg);
       }
 
@@ -157,10 +159,10 @@ const BookNow = () => {
               <div>
                 <h3 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">Contact</h3>
                 <div className="space-y-4">
-                  <a href="tel:6166447135" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
+                  <a href="tel:6166447135" className="flex min-h-11 items-center gap-3 font-body text-sm text-foreground/80 transition-colors hover:text-foreground">
                     <Phone size={14} className="text-bronze" /> 616-644-7135
                   </a>
-                  <a href="mailto:tomgascon@heritagervdetailing.com" className="flex items-center gap-3 text-foreground/80 font-body text-sm hover:text-foreground transition-colors">
+                  <a href="mailto:tomgascon@heritagervdetailing.com" className="flex min-h-11 items-center gap-3 font-body text-sm text-foreground/80 transition-colors hover:text-foreground">
                     <Mail size={14} className="text-bronze" /> tomgascon@heritagervdetailing.com
                   </a>
                   <div className="flex items-center gap-3 text-foreground/80 font-body text-sm">

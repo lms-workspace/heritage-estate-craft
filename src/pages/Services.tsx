@@ -1,84 +1,6 @@
 import { Link } from "react-router-dom";
-import { Check } from "lucide-react";
-
-const services = [
-  {
-    id: "signature-exterior-renewal",
-    title: "Signature Exterior Renewal",
-    price: "From $18 per linear foot",
-    tagline: "Immaculate. Protected. Refined.",
-    cta: "Restore Your RV",
-    description:
-      "A premium exterior wash and decontamination treatment designed to remove road film, bug residue, and environmental buildup — finished with a high-grade polymer UV sealant to preserve finish and enhance long-term gloss.",
-    includes: [
-      "Full body hand wash (RV-safe soap)",
-      "Bug & tar removal",
-      "Exterior window cleaning",
-      "Wheel cleaning & tire dressing",
-      "High-grade UV protective sealant applied by hand or orbital",
-      "Finished with fresh microfiber removal",
-    ],
-    idealFor:
-      "Painted and fiberglass RVs needing UV defense and gloss enhancement. Vehicles between correction services.",
-    interval: "Every 6–9 months",
-  },
-  {
-    id: "ultimate-fiberglass-restoration",
-    title: "Ultimate Fiberglass Restoration",
-    price: "From $22 per linear foot",
-    tagline: "Bring the original beauty back.",
-    cta: "Revive the Surface",
-    description:
-      "Fiberglass exteriors are engineered for durability — but prolonged exposure to UV radiation and environmental fallout leads to oxidation, fading, and surface chalking. Our restoration process removes the oxidized layer through controlled polishing techniques, restores depth and clarity, and seals the surface with professional-grade UV protection.",
-    includes: [
-      "Comprehensive exterior deep clean",
-      "Complete oxidation removal across all fiberglass surfaces",
-      "Professional dual-action machine polishing",
-      "Fiberglass-specific UV protective sealant",
-      "Wheel cleaning & exterior window cleaning",
-    ],
-    idealFor:
-      "Fiberglass RVs showing oxidation, fading, or chalking. Vehicles stored outdoors or exposed to prolonged sun.",
-    interval: null,
-  },
-  {
-    id: "luxe-roof-rejuvenation",
-    title: "Luxe Roof Rejuvenation",
-    price: "From $120",
-    tagline: "Protection you can depend on — performance you trust.",
-    cta: "Preserve What Matters",
-    description:
-      "The roof is the most UV-exposed surface on your RV and the most frequently overlooked. Our Luxe Roof Rejuvenation thoroughly cleans and conditions the entire roof system — rubber or fiberglass — and applies aerospace-grade UV treatment to every component.",
-    includes: [
-      "Full deep clean of roof, gutters, and all rooftop components",
-      "UV treatment & conditioner applied to rubber or fiberglass roof",
-      "Conditioning of plastic components, skylights, vents, and covers",
-    ],
-    idealFor: "RVs stored outdoors. Owners focused on preventive maintenance.",
-    interval: "Every 6–12 months",
-    note: "Add-on — requires minimum Essential Maintenance Wash",
-  },
-  {
-    id: "essential-maintenance-wash",
-    title: "Essential Maintenance Wash",
-    price: "From $7 per linear foot",
-    tagline: "Because excellence deserves consistency.",
-    cta: "Maintain the Standard",
-    description:
-      "Designed to preserve, not strip, the work already invested in your RV. Our Essential Maintenance Wash provides a thorough, surface-safe clean that maintains existing protection while restoring a refined, road-ready appearance — without compromising paint, fiberglass, trim, or previously applied sealants.",
-    includes: [
-      "Roof rinse, slide roofs, gutters",
-      "Full-body foam cannon wash with wax-safe soap and bug removal",
-      "Spot-free water rinse",
-      "Chamois drying — streak-free finish",
-      "Exterior windows and windshield",
-      "Wheel and tire cleaning, tire dressing, wheel shine",
-    ],
-    idealFor:
-      "RVs with existing protection or recent detailing. Owners maintaining between extended trips or storage.",
-    interval: "Every 1–2 months",
-  },
-];
+import { ArrowRight, CheckCircle2, Shield, Sparkles, Sun } from "lucide-react";
+import { heritageImages, servicePackages } from "@/lib/heritageMedia";
 
 const addons = [
   { name: "Roof Cleaning Add-On", price: "+$5/linear ft" },
@@ -87,112 +9,73 @@ const addons = [
 
 const Services = () => {
   return (
-    <main className="pt-20">
-      {/* Header */}
-      <section className="bg-charcoal text-parchment py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8 max-w-3xl text-center">
-          <h1 className="font-heading text-4xl md:text-5xl mb-4">Our Services</h1>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-8" />
-          <p className="font-body text-parchment/70 text-base md:text-lg leading-relaxed">
-            At Heritage, every service is delivered with meticulous attention to detail, premium products, and a disciplined approach that honors your investment. Whether you're preparing for your next voyage or protecting your RV during storage, our care ensures exceptional results and long-term peace of mind.
-          </p>
+    <main className="min-h-screen bg-[#f4ead8] text-[#191410]">
+      <section className="relative overflow-hidden bg-[#161210] text-[#f8ecd9]">
+        <img src={heritageImages.sideProfile} alt="Large RV sidewall ready for exterior detailing" className="absolute inset-0 h-full w-full object-cover opacity-42" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#161210] via-[#161210]/82 to-[#161210]/35" />
+        <div className="container relative mx-auto px-6 py-28 md:py-36">
+          <p className="text-sm uppercase tracking-[0.32em] text-[#d9b177]">RV detailing services</p>
+          <h1 className="mt-5 max-w-4xl font-serif text-5xl leading-tight md:text-7xl">Service levels for road film, oxidation, roof grime, and finish protection.</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-8 text-[#f8ecd9]/72">Every RV is different. These packages preserve the existing Heritage pricing while making the scope clearer for fifth-wheels, travel trailers, and motorhomes.</p>
         </div>
       </section>
 
-      {/* Services */}
-      <section className="bg-background">
-        {services.map((service, i) => (
-          <div
-            key={service.title}
-            id={service.id}
-            className={`py-16 md:py-24 ${i % 2 === 1 ? "bg-parchment/10" : ""}`}
-          >
-            <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-2 mb-2">
-                <h2 className="font-heading text-2xl md:text-3xl text-foreground">{service.title}</h2>
-                <span className="font-body font-medium text-bronze text-sm md:text-base whitespace-nowrap">
-                  {service.price}
-                </span>
-              </div>
-              <p className="font-body text-sm italic text-muted-foreground mb-6">{service.tagline}</p>
-              {service.note && (
-                <p className="font-body text-xs text-bronze mb-4 tracking-wide">{service.note}</p>
-              )}
-              <p className="font-body text-base text-foreground/80 leading-relaxed mb-8">
-                {service.description}
-              </p>
-
-              <div className="mb-8">
-                <h3 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4">
-                  What's Included
-                </h3>
-                <ul className="space-y-2">
-                  {service.includes.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-foreground/80 font-body">
-                      <Check size={14} className="text-primary mt-0.5 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+      <section className="container mx-auto px-6 py-20">
+        <div className="grid gap-6 lg:grid-cols-2">
+          {servicePackages.map((service) => (
+            <article key={service.title} className="border border-[#8d542a]/25 bg-white/70 p-8 shadow-sm">
+              <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
                 <div>
-                  <h4 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">
-                    Ideal For
-                  </h4>
-                  <p className="font-body text-sm text-foreground/70">{service.idealFor}</p>
+                  <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[#8d542a]">{service.price}</p>
+                  <h2 className="mt-3 font-serif text-4xl leading-tight">{service.title}</h2>
+                  <p className="mt-2 font-semibold text-[#233917]">{service.tagline}</p>
                 </div>
-                {service.interval && (
-                  <div>
-                    <h4 className="font-body text-xs tracking-[0.2em] uppercase text-muted-foreground mb-2">
-                      Recommended Interval
-                    </h4>
-                    <p className="font-body text-sm text-foreground/70">{service.interval}</p>
-                  </div>
-                )}
+                <Sparkles className="h-8 w-8 shrink-0 text-[#8d542a]" />
               </div>
-
-              <Link
-                to="/book"
-                className="inline-block bg-primary text-primary-foreground font-body font-medium text-sm px-8 py-3 rounded-sm tracking-wide hover:bg-primary/90 transition-colors"
-              >
-                {service.cta}
+              <p className="mt-5 leading-7 text-[#191410]/70">{service.description}</p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {service.includes.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm leading-6 text-[#191410]/72"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#8d542a]" /> {item}</li>
+                ))}
+              </ul>
+              <Link to="/book-now" className="mt-8 inline-flex items-center gap-2 bg-[#233917] px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#f8ecd9] hover:bg-[#2f4a21]">
+                Request this service <ArrowRight className="h-4 w-4" />
               </Link>
-            </div>
-          </div>
-        ))}
+            </article>
+          ))}
+        </div>
       </section>
 
-      {/* Add-ons */}
-      <section className="bg-parchment/20 py-16">
-        <div className="container mx-auto px-4 md:px-8 max-w-4xl">
-          <h2 className="font-heading text-2xl mb-8">Add-On Services</h2>
-          <div className="space-y-4">
+      <section className="bg-[#211a16] py-20 text-[#f8ecd9]">
+        <div className="container mx-auto grid gap-10 px-6 lg:grid-cols-[.9fr_1.1fr]">
+          <div>
+            <p className="text-sm uppercase tracking-[0.32em] text-[#d9b177]">Add-ons</p>
+            <h2 className="mt-4 font-serif text-4xl md:text-6xl">Top-side and awning work when the RV needs more.</h2>
+            <p className="mt-5 text-[#f8ecd9]/68">Roof surfaces, awnings, gutters, vents, and slide tops can be added when the job scope calls for it.</p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2">
             {addons.map((addon) => (
-              <div key={addon.name} className="flex justify-between items-center py-3 border-b border-secondary">
-                <span className="font-body text-sm text-foreground/80">{addon.name}</span>
-                <span className="font-body text-sm text-bronze font-medium">{addon.price}</span>
+              <div key={addon.name} className="border border-[#c27c3e]/30 bg-[#161210] p-7">
+                <p className="text-sm uppercase tracking-[0.2em] text-[#d9b177]">{addon.price}</p>
+                <h3 className="mt-3 font-serif text-3xl">{addon.name}</h3>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary text-primary-foreground py-20">
-        <div className="container mx-auto px-4 md:px-8 text-center">
-          <h2 className="font-heading text-3xl md:text-4xl mb-4">
-            Every vehicle is different. Every service is tailored.
-          </h2>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-8" />
-          <Link
-            to="/book"
-            className="inline-block bg-charcoal text-parchment font-body font-medium text-sm px-10 py-4 rounded-sm tracking-wide hover:bg-charcoal/90 transition-colors"
-          >
-            Request a Service Quote
-          </Link>
-        </div>
+      <section className="container mx-auto grid gap-10 px-6 py-20 lg:grid-cols-3">
+        {[
+          { icon: Shield, title: "Protection-focused", body: "Wax, sealant, UV-minded treatment, and finish inspection are positioned as preservation — not a cosmetic afterthought." },
+          { icon: Sun, title: "Built for outdoor storage", body: "Packages speak directly to oxidation, sun exposure, road film, roof grime, and the surfaces RV owners worry about." },
+          { icon: Sparkles, title: "Real finish walkthroughs", body: "The updated site now uses real project videos and photos instead of generic placeholder imagery." },
+        ].map(({ icon: Icon, title, body }) => (
+          <div key={title} className="border border-[#8d542a]/20 bg-white/60 p-7">
+            <Icon className="h-8 w-8 text-[#8d542a]" />
+            <h3 className="mt-4 font-serif text-3xl">{title}</h3>
+            <p className="mt-3 leading-7 text-[#191410]/66">{body}</p>
+          </div>
+        ))}
       </section>
     </main>
   );

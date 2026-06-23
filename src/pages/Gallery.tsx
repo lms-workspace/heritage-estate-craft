@@ -1,50 +1,58 @@
-const galleryItems = [
-  "Oxidation Treatment",
-  "Fiberglass Restoration",
-  "Roof Rejuvenation",
-  "Exterior Renewal",
-  "Full Detail",
-  "Ceramic Coating",
-  "Pre-Storage Prep",
-  "Class A Restoration",
-];
+import { Link } from "react-router-dom";
+import { ArrowRight, Camera, Film } from "lucide-react";
+import { galleryItems, heritageVideos } from "@/lib/heritageMedia";
 
 const Gallery = () => {
   return (
-    <main className="pt-20">
-      {/* Header */}
-      <section className="bg-charcoal text-parchment py-20 md:py-28">
-        <div className="container mx-auto px-4 md:px-8 max-w-3xl text-center">
-          <h1 className="font-heading text-4xl md:text-5xl mb-4">Results speak louder than promises.</h1>
-          <div className="w-12 h-0.5 bg-bronze mx-auto mb-8" />
-          <p className="font-body text-parchment/70 text-base md:text-lg leading-relaxed">
-            Each image represents a preserved investment and a client who can drive with confidence.
+    <main className="min-h-screen bg-[#161210] text-[#f8ecd9]">
+      <section className="container mx-auto px-6 py-24 md:py-32">
+        <div className="max-w-4xl">
+          <p className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.32em] text-[#d9b177]"><Camera className="h-4 w-4" /> Real Heritage RV media</p>
+          <h1 className="mt-5 font-serif text-5xl leading-tight md:text-7xl">Exterior detailing that looks like actual work — because it is.</h1>
+          <p className="mt-6 text-lg leading-8 text-[#f8ecd9]/70">
+            These images come from the current Heritage RV media set: roof perspectives, wheel details, sidewall coverage, and the Salem Hemisphere fifth-wheel featured throughout the site refresh.
           </p>
         </div>
       </section>
 
-      {/* Gallery Grid */}
-      <section className="bg-charcoal/95 py-16 md:py-24">
-        <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {galleryItems.map((label) => (
-              <div
-                key={label}
-                className="aspect-[4/3] bg-charcoal border border-parchment/10 relative group overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-5">
-                  <span className="font-body text-xs text-bronze tracking-[0.15em] uppercase">{label}</span>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="font-body text-parchment/20 text-xs tracking-widest uppercase">Before / After</span>
-                </div>
+      <section className="container mx-auto px-6 pb-24">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {galleryItems.map((item, index) => (
+            <article key={item.title} className={`group overflow-hidden border border-[#c27c3e]/25 bg-[#211a16] ${index === 0 ? "md:col-span-2" : ""}`}>
+              <div className={`${item.orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]"} overflow-hidden bg-black`}>
+                <img src={item.src} alt={item.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-105" loading={index > 1 ? "lazy" : "eager"} />
               </div>
-            ))}
+              <div className="p-6">
+                <p className="text-xs uppercase tracking-[0.24em] text-[#d9b177]">{item.label}</p>
+                <h2 className="mt-2 font-serif text-3xl leading-tight">{item.title}</h2>
+                <p className="mt-3 text-sm leading-6 text-[#f8ecd9]/64">{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="border-y border-[#c27c3e]/20 bg-[#211a16] py-24">
+        <div className="container mx-auto px-6">
+          <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.32em] text-[#d9b177]"><Film className="h-4 w-4" /> Video proof</p>
+              <h2 className="mt-4 font-serif text-4xl md:text-6xl">Two upgraded website videos.</h2>
+            </div>
+            <Link to="/book-now" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-[#d9b177] hover:text-[#f8ecd9]">
+              Request quote <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
-          <p className="text-center text-parchment/40 text-sm font-body mt-10">
-            Gallery photos coming soon. Contact us to see recent work.
-          </p>
+          <div className="grid items-start gap-8 md:grid-cols-2 xl:grid-cols-[.82fr_.82fr]">
+            <article className="overflow-hidden border border-[#c27c3e]/30 bg-black">
+              <video src={heritageVideos.walkthrough} poster={heritageVideos.walkthroughPoster} controls preload="metadata" playsInline className="aspect-[9/16] w-full object-cover" />
+              <div className="bg-[#161210] p-6"><h3 className="font-serif text-3xl">Walkthrough story</h3><p className="mt-2 text-sm leading-6 text-[#f8ecd9]/64">Real voice walkthrough with branded callouts and captions.</p></div>
+            </article>
+            <article className="overflow-hidden border border-[#c27c3e]/30 bg-black">
+              <video src={heritageVideos.frontCapShort} poster={heritageVideos.frontCapPoster} controls preload="metadata" playsInline className="aspect-[9/16] w-full object-cover" />
+              <div className="bg-[#161210] p-6"><h3 className="font-serif text-3xl">Vertical short</h3><p className="mt-2 text-sm leading-6 text-[#f8ecd9]/64">A polished mobile/social proof clip for front-cap and exterior care.</p></div>
+            </article>
+          </div>
         </div>
       </section>
     </main>

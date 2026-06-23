@@ -17,10 +17,10 @@ const Footer = () => {
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="font-body text-xs tracking-[0.2em] uppercase text-parchment/40 mb-4">Contact</h4>
-            <a href="tel:6166447135" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
+            <a href="tel:6166447135" className="flex min-h-11 items-center gap-3 text-sm text-parchment/70 transition-colors hover:text-parchment">
               <Phone size={14} className="text-bronze" /> 616-644-7135
             </a>
-            <a href="mailto:tomgascon@heritagervdetailing.com" className="flex items-center gap-3 text-parchment/70 hover:text-parchment transition-colors text-sm">
+            <a href="mailto:tomgascon@heritagervdetailing.com" className="flex min-h-11 items-center gap-3 text-sm text-parchment/70 transition-colors hover:text-parchment">
               <Mail size={14} className="text-bronze" /> tomgascon@heritagervdetailing.com
             </a>
             <div className="flex items-center gap-3 text-parchment/70 text-sm">
@@ -35,14 +35,15 @@ const Footer = () => {
               {[
                 { label: "Home", to: "/" },
                 { label: "Services", to: "/services" },
+                { label: "Gallery", to: "/gallery" },
                 { label: "About", to: "/about" },
                 { label: "Book Now", to: "/book" },
+                { label: "Privacy", to: "/privacy" },
               ].map(({ label, to }) => (
                 <Link
                   key={label}
                   to={to}
-                  onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                  className="block text-parchment/60 hover:text-parchment text-sm transition-colors"
+                  className="block min-h-11 py-3 text-sm text-parchment/60 transition-colors hover:text-parchment"
                 >
                   {label}
                 </Link>
