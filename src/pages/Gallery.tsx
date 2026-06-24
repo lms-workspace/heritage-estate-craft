@@ -37,7 +37,7 @@ const Gallery = () => {
           <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <p className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.32em] text-[#d9b177]"><Film className="h-4 w-4" /> Video proof</p>
-              <h2 className="mt-4 font-serif text-4xl md:text-6xl">Two upgraded website videos.</h2>
+              <h2 className="mt-4 font-serif text-4xl md:text-6xl">See the finish in motion.</h2>
             </div>
             <Link to="/book-now" className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-[#d9b177] hover:text-[#f8ecd9]">
               Request quote <ArrowRight className="h-4 w-4" />

@@ -52,8 +52,8 @@ const Index = () => {
             <div className="absolute -inset-5 rounded-[2rem] bg-[#c27c3e]/20 blur-3xl" />
             <video className="relative aspect-[9/16] w-full rounded-[2rem] border border-[#c27c3e]/50 bg-black object-cover shadow-2xl shadow-black/50" src={heritageVideos.frontCapShort} poster={heritageVideos.frontCapPoster} muted autoPlay loop playsInline />
             <div className="absolute -bottom-6 left-6 right-6 border border-[#c27c3e]/40 bg-[#161210]/88 p-5 backdrop-blur">
-              <p className="text-xs uppercase tracking-[0.28em] text-[#d9b177]">Featured short</p>
-              <p className="mt-2 text-sm text-[#f8ecd9]/78">A close-up fifth-wheel exterior clip showing real Heritage RV detailing work.</p>
+              <p className="text-xs uppercase tracking-[0.28em] text-[#d9b177]">Front-cap finish</p>
+              <p className="mt-2 text-sm text-[#f8ecd9]/78">A close-up look at fifth-wheel exterior care and finish protection.</p>
             </div>
           </div>
         </div>
