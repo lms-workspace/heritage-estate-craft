@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { type MouseEvent, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 
 const navLinks = [
@@ -12,13 +12,25 @@ const navLinks = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   const closeMenu = () => setOpen(false);
+  const goHome = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.preventDefault();
+    closeMenu();
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      return;
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
 
   return (
     <nav className="fixed left-0 right-0 top-0 z-50 border-b border-parchment/10 bg-charcoal/92 shadow-[0_12px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl transition-all duration-300">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:h-20 md:px-8">
-        <Link to="/" onClick={closeMenu} className="flex min-h-11 items-center gap-3 font-heading text-lg tracking-wide text-parchment transition-colors duration-300 hover:text-bronze sm:text-xl md:text-2xl">
+        <Link to="/" onClick={goHome} aria-label="Go to Heritage RV Detailing homepage" className="flex min-h-11 items-center gap-3 font-heading text-lg tracking-wide text-parchment transition-colors duration-300 hover:text-bronze sm:text-xl md:text-2xl">
           <img src="/favicon.png" alt="" className="h-9 w-9 rounded-sm border border-bronze/35 bg-charcoal object-cover shadow-sm shadow-black/30 md:h-10 md:w-10" />
           <span>Heritage RV Detailing</span>
         </Link>
