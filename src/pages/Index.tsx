@@ -21,7 +21,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <picture>
             <source srcSet={heritageImages.heroBackground} type="image/webp" />
-            <img src={heritageImages.heroBackgroundJpg} alt="Luxury fifth-wheel RV parked in a resort-style setting" className="h-full w-full object-cover" />
+            <img src={heritageImages.heroBackgroundJpg} alt="Fifth-wheel RV exterior ready for mobile detailing" className="h-full w-full object-cover" />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-r from-[#161210] via-[#161210]/78 to-[#161210]/20" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#161210] via-transparent to-transparent" />
@@ -53,7 +53,7 @@ const Index = () => {
             <video className="relative aspect-[9/16] w-full rounded-[2rem] border border-[#c27c3e]/50 bg-black object-cover shadow-2xl shadow-black/50" src={heritageVideos.frontCapShort} poster={heritageVideos.frontCapPoster} muted autoPlay loop playsInline />
             <div className="absolute -bottom-6 left-6 right-6 border border-[#c27c3e]/40 bg-[#161210]/88 p-5 backdrop-blur">
               <p className="text-xs uppercase tracking-[0.28em] text-[#d9b177]">Featured short</p>
-              <p className="mt-2 text-sm text-[#f8ecd9]/78">A real fifth-wheel clip rebuilt as a polished vertical promo.</p>
+              <p className="mt-2 text-sm text-[#f8ecd9]/78">A close-up fifth-wheel exterior clip showing real Heritage RV detailing work.</p>
             </div>
           </div>
         </div>
@@ -76,12 +76,12 @@ const Index = () => {
       <section className="container mx-auto grid gap-12 px-6 py-24 lg:grid-cols-[.86fr_.74fr] lg:items-center">
         <div>
           <p className="text-sm uppercase tracking-[0.32em] text-[#d9b177]">Recent detail story</p>
-          <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">A full-frame walkthrough with captions that sell the work.</h2>
+          <h2 className="mt-4 font-serif text-4xl leading-tight md:text-6xl">A walkthrough that shows the work up close.</h2>
           <p className="mt-6 text-lg leading-8 text-[#f8ecd9]/72">
-            The walkthrough keeps the real voice and footage, then adds larger caption moments, service cues, and a clean Heritage overlay treatment so the result feels polished without hiding the actual work.
+            Watch the real exterior surfaces, roof areas, wheels, plastics, and finish-care details that go into a Heritage RV service.
           </p>
           <div className="mt-8 space-y-4">
-            {["Full-bleed video treatment — no inset frame inside the player", "Engaging caption cards timed to the technician walkthrough", "Wax, UV protection, metal, plastics, wheels, and final detail cues called out"].map((item) => (
+            {["Real fifth-wheel exterior footage", "Exterior, roof, wheel, trim, and finish details shown clearly", "Wax, UV protection, metal, plastics, wheels, and final detail cues covered"].map((item) => (
               <div key={item} className="flex items-start gap-3 text-[#f8ecd9]/82">
                 <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#d9b177]" />
                 <span>{item}</span>

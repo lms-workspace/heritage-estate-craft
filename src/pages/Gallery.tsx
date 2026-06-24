@@ -8,9 +8,9 @@ const Gallery = () => {
       <section className="container mx-auto px-6 py-24 md:py-32">
         <div className="max-w-4xl">
           <p className="inline-flex items-center gap-3 text-sm uppercase tracking-[0.32em] text-[#d9b177]"><Camera className="h-4 w-4" /> Real Heritage RV media</p>
-          <h1 className="mt-5 font-serif text-5xl leading-tight md:text-7xl">Exterior detailing that looks like actual work — because it is.</h1>
+          <h1 className="mt-5 font-serif text-5xl leading-tight md:text-7xl">Exterior detailing shown through real RV work.</h1>
           <p className="mt-6 text-lg leading-8 text-[#f8ecd9]/70">
-            These images come from the current Heritage RV media set: roof perspectives, wheel details, sidewall coverage, and the Salem Hemisphere fifth-wheel featured throughout the site refresh.
+            A closer look at roof perspectives, wheel details, sidewall coverage, front-cap care, and finished exterior surfaces.
           </p>
         </div>
       </section>
@@ -46,11 +46,11 @@ const Gallery = () => {
           <div className="grid items-start gap-8 md:grid-cols-2 xl:grid-cols-[.82fr_.82fr]">
             <article className="overflow-hidden border border-[#c27c3e]/30 bg-black">
               <video src={heritageVideos.walkthrough} poster={heritageVideos.walkthroughPoster} controls preload="metadata" playsInline className="aspect-[9/16] w-full object-cover" />
-              <div className="bg-[#161210] p-6"><h3 className="font-serif text-3xl">Walkthrough story</h3><p className="mt-2 text-sm leading-6 text-[#f8ecd9]/64">Real voice walkthrough with branded callouts and captions.</p></div>
+              <div className="bg-[#161210] p-6"><h3 className="font-serif text-3xl">Walkthrough story</h3><p className="mt-2 text-sm leading-6 text-[#f8ecd9]/64">A real service walkthrough showing exterior-care details up close.</p></div>
             </article>
             <article className="overflow-hidden border border-[#c27c3e]/30 bg-black">
               <video src={heritageVideos.frontCapShort} poster={heritageVideos.frontCapPoster} controls preload="metadata" playsInline className="aspect-[9/16] w-full object-cover" />
-              <div className="bg-[#161210] p-6"><h3 className="font-serif text-3xl">Vertical short</h3><p className="mt-2 text-sm leading-6 text-[#f8ecd9]/64">A polished mobile/social proof clip for front-cap and exterior care.</p></div>
+              <div className="bg-[#161210] p-6"><h3 className="font-serif text-3xl">Front-cap detail</h3><p className="mt-2 text-sm leading-6 text-[#f8ecd9]/64">A short look at front-cap and exterior finish care.</p></div>
             </article>
           </div>
         </div>

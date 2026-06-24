@@ -68,7 +68,7 @@ const Services = () => {
         {[
           { icon: Shield, title: "Protection-focused", body: "Wax, sealant, UV-minded treatment, and finish inspection are positioned as preservation — not a cosmetic afterthought." },
           { icon: Sun, title: "Built for outdoor storage", body: "Packages speak directly to oxidation, sun exposure, road film, roof grime, and the surfaces RV owners worry about." },
-          { icon: Sparkles, title: "Real finish walkthroughs", body: "The updated site now uses real project videos and photos instead of generic placeholder imagery." },
+          { icon: Sparkles, title: "Real finish walkthroughs", body: "Photos and videos show actual RV surfaces, roof areas, wheels, trim, and exterior-care details." },
         ].map(({ icon: Icon, title, body }) => (
           <div key={title} className="border border-[#8d542a]/20 bg-white/60 p-7">
             <Icon className="h-8 w-8 text-[#8d542a]" />

@@ -1,8 +1,8 @@
 export const heritageImages = {
   hero: "/heritage-media/images/salem-hemisphere-front-profile.webp",
   heroJpg: "/heritage-media/images/salem-hemisphere-front-profile.jpg",
-  heroBackground: "/heritage-media/images/luxury-fifth-wheel-hero.webp",
-  heroBackgroundJpg: "/heritage-media/images/luxury-fifth-wheel-hero.jpg",
+  heroBackground: "/heritage-media/images/mckinley-trailer-side-profile.webp",
+  heroBackgroundJpg: "/heritage-media/images/mckinley-trailer-side-profile.jpg",
   frontCap: "/heritage-media/images/salem-hemisphere-front-cap.webp",
   sideProfile: "/heritage-media/images/mckinley-trailer-side-profile.webp",
   serviceInProgress: "/heritage-media/images/rv-exterior-service-in-progress.webp",
@@ -23,7 +23,7 @@ export const galleryItems = [
     src: heritageImages.hero,
     title: "Salem Hemisphere exterior renewal",
     label: "Finished profile",
-    description: "Real fifth-wheel project media used throughout the updated Heritage RV site.",
+    description: "A finished fifth-wheel exterior shown with the cleaner, sharper profile owners want before the next trip.",
     orientation: "landscape",
   },
   {

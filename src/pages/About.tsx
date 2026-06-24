@@ -28,7 +28,7 @@ const values = [
 const familyNotes = [
   "A family behind the brand, not a faceless wash crew.",
   "Mobile service built around RV owners, storage lots, homes, and trip prep.",
-  "Premium exterior care without fake testimonials or inflated claims.",
+  "Premium exterior care built on clear scope, careful work, and straightforward communication.",
 ];
 
 const About = () => {

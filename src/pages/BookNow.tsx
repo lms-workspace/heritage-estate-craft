@@ -88,7 +88,7 @@ const BookNow = () => {
                 <div className="text-center py-16">
                   <h2 className="font-heading text-2xl text-foreground mb-4">Thank You</h2>
                   <p className="font-body text-muted-foreground">
-                    Tom personally responds to every inquiry within 24 hours. Check your inbox — a confirmation has been sent to {formData.email}.
+                    Heritage RV Detailing received your inquiry. Check your inbox — a confirmation has been sent to {formData.email}.
                   </p>
                 </div>
               ) : (
@@ -110,22 +110,22 @@ const BookNow = () => {
                     </div>
                     <div>
                       <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Zip Code</label>
-                      <input name="zipCode" value={formData.zipCode} onChange={handleChange} className={inputClass} placeholder="e.g., 37201" />
+                      <input name="zipCode" value={formData.zipCode} onChange={handleChange} className={inputClass} />
                     </div>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
                       <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Make</label>
-                      <input name="rvMake" value={formData.rvMake} onChange={handleChange} className={inputClass} placeholder="e.g., Airstream, Tiffin" />
+                      <input name="rvMake" value={formData.rvMake} onChange={handleChange} className={inputClass} />
                     </div>
                     <div>
                       <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Model</label>
-                      <input name="rvModel" value={formData.rvModel} onChange={handleChange} className={inputClass} placeholder="e.g., Allegro, Ventana" />
+                      <input name="rvModel" value={formData.rvModel} onChange={handleChange} className={inputClass} />
                     </div>
                   </div>
                   <div>
                     <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">RV Length</label>
-                    <input name="rvLength" value={formData.rvLength} onChange={handleChange} className={inputClass} placeholder="e.g., 38 ft" />
+                    <input name="rvLength" value={formData.rvLength} onChange={handleChange} className={inputClass} />
                   </div>
                   <div>
                     <label className="block font-body text-xs tracking-[0.15em] uppercase text-muted-foreground mb-2">Service Interested In</label>
@@ -169,7 +169,7 @@ const BookNow = () => {
                     <MapPin size={14} className="text-bronze" /> Middle Tennessee
                   </div>
                   <div className="flex items-center gap-3 text-foreground/80 font-body text-sm">
-                    <Clock size={14} className="text-bronze" /> Responds within 24 hours
+                    <Clock size={14} className="text-bronze" /> Direct follow-up after your request
                   </div>
                 </div>
               </div>
@@ -199,7 +199,7 @@ const BookNow = () => {
 
               <div className="border-t border-secondary pt-6">
                 <p className="font-body text-sm text-foreground/70 italic">
-                  Tom personally responds to every inquiry within 24 hours.
+                  Heritage RV Detailing will review your request and follow up directly.
                 </p>
               </div>
             </div>
